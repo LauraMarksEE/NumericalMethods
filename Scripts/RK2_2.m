@@ -1,5 +1,5 @@
 ti = 0; qi = 500*10^-9;
-h = 0.00011; tf = 7*10^-2;
+h = 0.00011; tf = 7*10^-3;
 
 R = 1000;
 C = 100*10^-9;
@@ -7,8 +7,8 @@ tau = 100*10^-6;
 tp = 1000*10^-6; %Vin time period
 
 % Vin = @(t) 2.5;
-Vin = @(t) 2.5*exp(-(t.^2)/tau); %exp
-% Vin = @(t) 5*sin((2*pi*t)/tp); %sine
+% Vin = @(t) 2.5*exp(-(t)/tau); %exp
+Vin = @(t) 5*cos((2*pi*t)/tp); %sine
 % Vin = @(t) 5*sign(cos((2*pi*t)/tp)); %square
 % Vin = @(t) 10*(2*floor(t/tp)-floor(2*t/tp))+5; %square
 % Vin = @(t) 5*2*((t/tp)-floor(0.5+(t/tp))); %sawtooth
