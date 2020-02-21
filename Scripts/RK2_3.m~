@@ -10,8 +10,8 @@ tp = 1000*10^-6; %Vin time period
 % Vin = @(t) 2.5*exp(-(t^2)/tau); %exp
 % Vin = @(t) 5*sin((2*pi*t)/tp); %sine
 % Vin = @(t) 5*sign(cos((2*pi*t)/tp)); %square
-% Vin = @(t) 5*square(2*pi*t/tp);
-Vin = @(t) 10*(2*floor(t/tp)-floor(2*t/tp))+5; %square
+Vin
+% Vin = @(t) 10*(2*floor(t/tp)-floor(2*t/tp))+5; %square
 % Vin = @(t) 5*2*((t/tp)-floor(0.5+(t/tp))); %sawtooth
 
 func = @(t, q) (1/R)*(Vin(t) - (1/C)*q);
@@ -27,13 +27,13 @@ qq;
 % qSol(t) = dsolve(ode, cond);
 
 syms t;
-f = exp(t/(R*C))*Vin(t)
+f = exp(t/(R*C))*Vin(t);
 F = int(f, t)
 exact = 1/(R*(exp(t/(R*C)))) * F
 %------------------------------------------
 
 % PLOTTING --------------------------------
-fplot(Vin, [0 tf], '-');
+% fplot(Vin, [0 tf], '-');
 hold on;
 
 plot(tt,qq/C, 'r-');
