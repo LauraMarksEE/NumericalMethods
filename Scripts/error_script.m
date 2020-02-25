@@ -25,14 +25,15 @@ for i= 1:9
 end
 
 
-%exact = (5/B) * cos (A*tt - Theta) + (Arb/C)*exp(-tt/(R*C));
-%plot(tt, exact);
-%title("Exact Solution");
+exact = (5/Beta) * cos (A*tt - Theta) + (z/C)*exp(-tt/(R*C));
+plot(tt, exact);
+hold on;
+% title("Exact Solution");
 
-%plot(tt,qq);
-%title("Numerical Method");
+plot(tt,qq/C);
+title("Numerical Method");
 
-loglog(h1, m1);
+% loglog(h1, m1);
 
 % error = exact - qq/C ;
 % plot(tt, error);
